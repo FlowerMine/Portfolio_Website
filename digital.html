@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower_Mine</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+<style>
+@font-face {
+font-family: "ArchitectsDaughter";
+src: url("font/ArchitectsDaughter-Regular.ttf");
+}
+         
+body {  
+ font-family: "ArchitectsDaughter"!important;
+ display: table; 
+ font-size: 26px; 
+ height: 100%; 
+ margin: 0 !important; 
+ padding: 0 !important; 
+ background-image: none; 
+ background-color: #D9DBF1; 
+ color: #7D84B2; 
+ text-align:center; 
+}
+         
+a { 
+ color: #5f7ca1; 
+}
+         
+a:hover { 
+ color: #DBF4A7; 
+ text-decoration: underline wavy;
+}
+         
+h1 { 
+ background-color: transparent; 
+ color: #5f7ca1;
+}
+
+table, th, td {
+ font-family: "ArchitectsDaughter";
+ background-color: #8E9DCC;
+ border: 1px solid #5f7ca1;
+ font-size: 26px;
+ text-align: center;
+}
+
+table {
+ border-radius: 30px; 
+ border-collapse: collapse;
+ table-layout: fixed;
+ width: 2%;
+ width: 500px; 
+}
+
+th{
+font-family: "ArchitectsDaughter" 
+}
+
+td{
+ width: 200px; 
+ padding: 16px;
+}
+  
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.column {
+  flex: 30%;
+  max-width: 25%;
+  padding: 0 5px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.column2 {
+  flex: 10%;
+  max-width: 30%;
+  /*padding: 0 5px;*/
+}
+
+.column2 img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 60%;
+}
+  
+#enlarged-image {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+}
+
+#enlarged-image img {
+      max-width: 80%;
+      max-height: 80%;
+      margin-bottom: 10px;
+}
+#caption {
+      color: #fff;
+      font-size: 20px;
+      margin-top: 10px;
+}
+#social-buttons {
+      margin-top: 20px;
+}
+
+.social-btn {
+      margin: 0 10px;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s, border-color 0.3s;
+      position: relative;
+      overflow: hidden;
+}
+
+.social-btn img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+.social-btn:hover img.default {
+      opacity: 1;
+}
+
+.social-btn:hover img.hover {
+      opacity: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+</style>
+   
+</head>
+  <body>
+    
+    <div id="enlarged-image" onclick="hideImage()">
+    <img src="" alt="Enlarged Image" id="enlarged-img">
+    <div id="caption"></div>
+    </div>
+
+<script>
+    
+function enlargeImage(src, caption) {
+      var enlargedImage = document.getElementById('enlarged-image');
+      enlargedImage.style.display = 'flex';
+      document.getElementById('enlarged-img').src = src;
+      document.getElementById('caption').innerText = caption;
+}
+
+function hideImage() {
+      var enlargedImage = document.getElementById('enlarged-image');
+      enlargedImage.style.display = 'none';
+      document.getElementById('enlarged-img').src = '';
+      document.getElementById('caption').innerText = '';
+}
+</script>
+    
+    
+<div id="header">
+<table style="width:99.9%;
+ font-size: 50px;">
+  <tbody>
+    <tr>
+      <th><a href="/about.html">About</a></th> 
+      <th><a href="/story.html">Story</a></th>
+      <th><a href="/digital.html">Digital</a></th> 
+      <th><a href="/sketchbook.html">Sketch</a></th>
+    </tr>
+  </tbody>
+</table>
+	 <h1>Digital</h1>
+          <div class="row">
+  <div class="column">
+     <img src="arts/digital/School_Lunch.png"onclick="enlargeImage('arts/digital/School_Lunch.png', 'School Lunch')">
+     <img src="arts/digital/Cece_Fly.png"onclick="enlargeImage('arts/digital/Cece_Fly.png', 'Cecelia Angel')">
+     <img src="arts/digital/Graduation_.png"onclick="enlargeImage('arts/digital/Graduation_.png', 'Graduation')">
+  </div>
+  <div class="column">
+     <img src="arts/digital/Greysen%20Cute.png"onclick="enlargeImage('arts/digital/Greysen%20Cute.png', 'Winter')">
+     <img src="arts/digital/Yo_What_Up.png"onclick="enlargeImage('arts/digital/Yo_What_Up.png', 'Remember to Like and Subscribe')">
+
+  </div>
+  <div class="column">
+     <img src="arts/digital/Sloan%20Computer.png"onclick="enlargeImage('arts/digital/Sloan%20Computer.png', 'Scrolling')">
+     <img src="arts/digital/Couch_.png"onclick="enlargeImage('arts/digital/Couch_.png', 'Chilling')">
+     <img src="arts/digital/Uhoh.png"onclick="enlargeImage('arts/digital/Uhoh.png', 'Wait What Huh')">
+     <img src="arts/digital/Why.png"onclick="enlargeImage('arts/digital/Why.png', 'How Could You')">
+    
+  </div>
+</div>
+ <div id="social-buttons">
+    <a class="social-btn" href="https://www.artstation.com/flower_mine" target="_blank">
+      <img class="default" src="images/artstation1.png" alt="ArtStation">
+      <img class="hover" src="images/artstation.png" alt="ArtStation Hover">
+    </a>
+    <a class="social-btn" href="https://github.com/FlowerMine" target="_blank">
+      <img class="default" src="images/github1.png" alt="GitHub">
+      <img class="hover" src="images/github.png" alt="GitHub Hover">
+    </a>
+    <a class="social-btn" href="https://www.instagram.com/flower_miner/?hl=en" target="_blank">
+      <img class="default" src="images/instagram1.png" alt="Instagram">
+      <img class="hover" src="images/instagram.png" alt="Instagram Hover">
+    </a>
+    <a class="social-btn" href="https://www.linkedin.com/in/emma-h-9aa790214/" target="_blank">
+      <img class="default" src="images/linkedin1.png" alt="LinkedIn">
+      <img class="hover" src="images/linkedin.png" alt="LinkedIn Hover">
+    </a>
+    <a class="social-btn" href="https://twitter.com/flower_miner"target="_blank">
+      <img class="default" src="images/twitterx1.png" alt="TwitterX">
+      <img class="hover" src="images/twitterx.png" alt="TwitterX Hover">
+    </a>
+    <a class="social-btn" href="https://www.youtube.com/channel/UCZuIXuEwa5swOzvhhuDZIWg" target="_blank">
+      <img class="default" src="images/youtube1.png" alt="Youtube">
+      <img class="hover" src="images/youtube.png" alt="Youtube Hover">
+    </a>
+  </div>
+</div>
+  </body>
+</html>
